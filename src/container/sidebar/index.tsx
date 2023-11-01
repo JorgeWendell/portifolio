@@ -4,7 +4,12 @@ import Paragrafo from '../../components/Paragrafo'
 import { BotaoTema, Descricao, SidebarContainer } from './styles'
 
 /* eslint-disable @typescript-eslint/no-unused-vars */
-const Sidebar = () => (
+
+type Props = {
+  trocaTema: () => void
+}
+
+const Sidebar = (props: Props) => (
   <aside>
     <SidebarContainer>
       <Avatar />
@@ -15,7 +20,7 @@ const Sidebar = () => (
       <Descricao tipo="principal" fontSize={12}>
         Programador Junior
       </Descricao>
-      <BotaoTema>Trocar Tema</BotaoTema>
+      <BotaoTema onClick={props.trocaTema}>Trocar Tema</BotaoTema>
     </SidebarContainer>
   </aside>
 )
